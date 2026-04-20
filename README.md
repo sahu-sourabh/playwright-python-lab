@@ -1,5 +1,7 @@
 # Playwright Python Lab 🚀
 
+[![Playwright Tests](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/playwright.yml/badge.svg)](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/playwright.yml)
+
 A professional automation sandbox for mastering Cross-Browser testing and AI-driven quality engineering.
 
 ## 🛠️ Setup

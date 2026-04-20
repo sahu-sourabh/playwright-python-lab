@@ -30,7 +30,9 @@ def pytest_runtest_makereport(item, call):
             os.makedirs(failure_dir, exist_ok=True)
 
             # 2. Save the screenshot
-            file_name = f"{item.name}_{datetime.now().strftime('%H%M%S')}.png"
+            # Replace the file_name line with this "safe" version:
+            safe_name = item.name.replace(":", "_").replace("/", "_").replace("[", "_").replace("]", "_")
+            file_name = f"fail_{safe_name}_{datetime.now().strftime('%H%M%S')}.png"
             file_path = os.path.join(failure_dir, file_name)
             page.screenshot(path=file_path)
 
@@ -45,6 +47,6 @@ def pytest_runtest_makereport(item, call):
                     f'onclick="window.open(this.src)" align="right"/></div>'
                 )
                 # Attach to the report object
-                extra = getattr(report, "extra", [])
+                extra = getattr(report, "extras", [])
                 extra.append(pytest_html.extras.html(html))
-                report.extra = extra
+                report.extras = extra
