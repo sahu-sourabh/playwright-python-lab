@@ -13,8 +13,6 @@ class LoginPage:
         self._username_input = page.get_by_placeholder("Username")
         self._password_input = page.get_by_placeholder("Password")
         self._login_button = page.get_by_role("button", name="Login")
-        # Added for Negative Testing
-        self._error_message = page.locator("[data-test='error']")
 
     def navigate(self):
         self.page.goto(Config.BASE_URL)
@@ -24,3 +22,19 @@ class LoginPage:
         self._username_input.fill(username)
         self._password_input.fill(password)
         self._login_button.click()
+
+    @property
+    def error_message(self):
+        # A 'Getter' that returns the locator.
+        return self.page.locator("[data-test='error']")
+
+    def smart_click_login(self):
+        # Logic: Tries the primary locator, falls back to fuzzy match on timeout.
+        try:
+            # Strategy A: The Resilient data-test
+            self._login_button.click(timeout=2000)
+        except Exception as e:
+            from utils.logger import logger
+            logger.warning(f"Primary locator failed: {e}. Attempting AI-style fuzzy match...")
+            # Strategy B: Fuzzy 'Smart' match
+            self.page.locator("button", has_text="Login").click()

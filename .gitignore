@@ -16,3 +16,7 @@ blob-report/
 
 # OS
 .DS_Store
+
+# Test Results & Reports (Consolidated)
+reports/
+failures/
