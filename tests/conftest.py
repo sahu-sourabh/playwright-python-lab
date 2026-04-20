@@ -29,10 +29,9 @@ def pytest_runtest_makereport(item, call):
             failure_dir = os.path.join(report_dir, "failures")
             os.makedirs(failure_dir, exist_ok=True)
 
-            # 2. Save the screenshot
-            # Replace the file_name line with this "safe" version:
-            safe_name = item.name.replace(":", "_").replace("/", "_").replace("[", "_").replace("]", "_")
-            file_name = f"fail_{safe_name}_{datetime.now().strftime('%H%M%S')}.png"
+            # 2. Save the screenshot with a unique name (using test name and timestamp)
+            clean_name = item.name.replace(":", "_").replace("/", "_").replace("[", "_").replace("]", "_")
+            file_name = f"fail_{clean_name}_{datetime.now().strftime('%H%M%S')}.png"
             file_path = os.path.join(failure_dir, file_name)
             page.screenshot(path=file_path)
 
