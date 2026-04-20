@@ -15,9 +15,9 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       # Map your secrets here
       BASE_URL: ${{ secrets.BASE_URL }}
-      USERNAME: ${{ secrets.SAUCE_USERNAME }}
-      PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
-      LOCKED_OUT_USERNAME: ${{ secrets.SAUCE_LOCKED_OUT_USERNAME }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      LOCKED_OUT_USERNAME: ${{ secrets.LOCKED_OUT_USERNAME }}
 
     steps:
     - uses: actions/checkout@v4
