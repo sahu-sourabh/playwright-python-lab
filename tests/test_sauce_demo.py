@@ -1,10 +1,18 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
+from utils.config_loader import Config
 
-def test_sauce_demo(page: Page):
-    page.goto("https://www.saucedemo.com/")
-    page.get_by_placeholder("Username").fill("standard_user")
-    page.get_by_placeholder("Password").fill("secret_sauce")
-    page.get_by_role("button", name="Login").click()
+def test_successful_login(page, login_page):
+    # Use the methods from the LoginPage class to perform actions
+    login_page.navigate()
+    login_page.submit_login(Config.USERNAME, Config.PASSWORD)
 
     # Verify login success
-    expect(page.get_by_text("Products")).to_be_visible()
+    expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
+
+def test_locked_out_user(login_page):
+    # Use the methods from the LoginPage class to perform actions
+    login_page.navigate()
+    login_page.submit_login(Config.LOCKED_OUT_USERNAME, Config.PASSWORD)
+
+    # Verify error message is visible
+    expect(login_page._error_message).to_be_visible()
