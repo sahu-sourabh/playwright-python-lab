@@ -9,6 +9,16 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    # Note: Opting into Node 24 early to stay ahead of deprecations
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      # Map your secrets here
+      BASE_URL: ${{ secrets.BASE_URL }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      LOCKED_OUT_USERNAME: ${{ secrets.LOCKED_OUT_USERNAME }}
+
     steps:
     - uses: actions/checkout@v4
 
@@ -27,14 +37,9 @@ jobs:
 
     - name: Run Playwright tests
       run: pytest
-      env:
-        BASE_URL: ${{ secrets.BASE_URL }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        LOCKED_OUT_USERNAME: ${{ secrets.LOCKED_OUT_USERNAME }}
 
     - name: Upload Report
-      if: always()
+      if: always() # This ensures reports upload even if tests fail
       uses: actions/upload-artifact@v4
       with:
         name: playwright-report
