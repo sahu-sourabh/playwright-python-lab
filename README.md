@@ -37,7 +37,7 @@ Follow these steps to replicate the lab environment:
    - pytest
 
 ## 📈 Engineering Objectives
-- **Asynchronous Execution**: Reducing CI/CD bottleneck by leveraging non-blocking I/O.
-- **Correlation Tracing**: Implementing X-Correlation-ID in API clients for observability.
-- **Atomic Commits**: Maintaining a clean, traceable Git history for collaborative growth.
-- **Modern Standards**: Using pyproject.toml for unified, standardized configuration.
+    - **Asynchronous Execution**: Reducing CI/CD bottleneck by leveraging non-blocking I/O.
+    - **Correlation Tracing**: Implementing X-Correlation-ID in API clients for observability.
+    - **Atomic Commits**: Maintaining a clean, traceable Git history for collaborative growth.
+    - **Modern Standards**: Using pyproject.toml for unified, standardized configuration.
