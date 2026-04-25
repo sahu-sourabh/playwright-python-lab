@@ -1,0 +1,39 @@
+[project]
+name = "playwright-python-lab"
+version = "0.1.0"
+description = "Hybrid AI-SDET Lab for Agentic Testing"
+authors = [{name = "Sourabh Sahu"}]
+# We only list the "Top Level" libraries we actually use.
+dependencies = [
+    "pytest-playwright>=0.7.2",  # Upgraded version
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.27.0",             # Our new Async API engine
+    "python-dotenv>=1.0.1",
+    "pytest-html>=4.1.0",
+    "loguru>=0.7.0",             # Expert logging
+    "ruff>=0.9.0",               # Fast linting (replacing old ruff)
+    "pre-commit>=4.0.0"          # Keeping your quality gate
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
+# Combined flags from both files:
+addopts = """
+    --browser chromium 
+    --base-url https://www.saucedemo.com/
+    --html=reports/report.html 
+    --self-contained-html
+"""
+
+[tool.ruff]
+# We'll configure ruff later to keep our code 'Sattvic'
+line-length = 100
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = { find = { where = ["."], include = ["core*", "infra*", "pages*", "configs*", "data*"] } }

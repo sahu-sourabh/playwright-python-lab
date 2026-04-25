@@ -1,4 +1,5 @@
 # Environments
+.venv/
 venv/
 .env
 
@@ -20,3 +21,8 @@ blob-report/
 # Test Results & Reports (Consolidated)
 reports/
 failures/
+
+# Build and Distribution
+build/
+dist/
+*.egg-info/

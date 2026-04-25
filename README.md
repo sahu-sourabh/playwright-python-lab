@@ -1,32 +1,47 @@
-# Playwright-Python Automation Lab
-An R&D Repository for Scalable Quality Engineering & AI-Augmented Testing
+# Playwright Python Lab: Hybrid AI-SDET 🚀
+An R&D Repository for Asynchronous Quality Engineering & Agentic Testing.
 
-[![Playwright Tests](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/playwright.yml/badge.svg)](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/main_pipeline.yml)
 
-## Project Overview
-This repository serves as a technical laboratory for exploring modern automation patterns using Python and Playwright. The focus is on moving beyond simple scripting toward building resilient, asynchronous, and maintainable testing architectures.
+## 🏗️ Modern Modular Architecture
+This lab is built using a **Domain-Driven Design (DDD)** approach to ensure scalability and separation of concerns:
+- **`core/`**: The engine room containing Custom Async API Clients and Browser configurations.
+- **`pages/`**: Page Object Models (POM) representing the application state and UI interactions.
+- **`infra/`**: Infrastructure as Code, including Docker-compose and environment utilities.
+- **`configs/`**: Centralized environment-specific settings and secret management.
+- **`legacy/`**: Archived previous implementations for historical reference.
 
-## Key Engineering Objectives
-Asynchronous Execution: Leveraging Playwright’s native async capabilities to optimize CI/CD runtime.
+## 🛠️ Tech Stack
+- **Language**: Python 3.12+ (Optimized for Async/Await patterns)
+- **Framework**: Pytest + Playwright (Plugin-based architecture)
+- **Build System**: `pyproject.toml` (Following PEP 518/621 Standards)
+- **Linting/Formatting**: Ruff (Ensuring high-quality, 'Sattvic' code standards)
+- **CI/CD**: GitHub Actions using Node 24 runners for modern performance.
 
-Resilient Locators: Implementing best practices to reduce flakiness in dynamic web environments.
+## 🚀 Quick Start (Local Setup)
+Follow these steps to replicate the lab environment:
 
-AI-Augmented Logic: (In Progress) Researching self-healing locator strategies using LLM-based prompting.
+1. **Clone & Create Virtual Env**:
+   ```bash
+   python -m venv .venv
+   # Windows:
+   .venv\Scripts\activate
+   # Mac/Linux:
+   source .venv/bin/activate```
 
-API-First Validation: Integrating REST/GraphQL checks to ensure full-stack quality coverage.
+2. **Install Local Package & Dependencies**:
+    # This installs the project in editable mode using pyproject.toml
+    pip install .
+    playwright install chromium
 
-## Tech Stack
-Language: Python 3.10+
+3. **Configure Environment**:
+    Create a .env file in the root directory (referencing .env_example)
 
-Framework: Playwright, Pytest
+4. **Run Tests**:
+    pytest
 
-Observability: (Simulated) Logs & Report Generation
-
-Infrastructure: GitHub Actions (CI/CD integration)
-
-## Framework Highlights
-Page Object Model (POM): Decoupled logic for high maintainability.
-
-Configuration Driven: Environment-specific executions via pytest-base-url.
-
-Scalable Utility Classes: Modular helper functions for API and Database interactions.
+## 📈 Engineering Objectives
+    - **Asynchronous Execution**: Reducing CI/CD bottleneck by leveraging non-blocking I/O.
+    - **Correlation Tracing**: Implementing X-Correlation-ID in API clients for observability.
+    - **Atomic Commits**: Maintaining a clean, traceable Git history for collaborative growth.
+    - **Modern Standards**: Using pyproject.toml for unified, standardized configuration.
