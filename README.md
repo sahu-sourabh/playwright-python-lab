@@ -22,26 +22,22 @@ This lab is built using a **Domain-Driven Design (DDD)** approach to ensure scal
 Follow these steps to replicate the lab environment:
 
 1. **Clone & Create Virtual Env**:
-   ```bash
-   python -m venv .venv
-   # Windows:
-   .venv\Scripts\activate
-   # Mac/Linux:
-   source .venv/bin/activate```
+   - python -m venv .venv
+   - Windows: .venv\Scripts\activate
+   - Mac/Linux: source .venv/bin/activate
 
 2. **Install Local Package & Dependencies**:
-    # This installs the project in editable mode using pyproject.toml
-    pip install .
-    playwright install chromium
+   - pip install .
+   - playwright install chromium
 
 3. **Configure Environment**:
-    Create a .env file in the root directory (referencing .env_example)
+   - Create a .env file in the root directory (referencing .env_example)
 
 4. **Run Tests**:
-    pytest
+   - pytest
 
 ## 📈 Engineering Objectives
-    - **Asynchronous Execution**: Reducing CI/CD bottleneck by leveraging non-blocking I/O.
-    - **Correlation Tracing**: Implementing X-Correlation-ID in API clients for observability.
-    - **Atomic Commits**: Maintaining a clean, traceable Git history for collaborative growth.
-    - **Modern Standards**: Using pyproject.toml for unified, standardized configuration.
+- **Asynchronous Execution**: Reducing CI/CD bottleneck by leveraging non-blocking I/O.
+- **Correlation Tracing**: Implementing X-Correlation-ID in API clients for observability.
+- **Atomic Commits**: Maintaining a clean, traceable Git history for collaborative growth.
+- **Modern Standards**: Using pyproject.toml for unified, standardized configuration.
