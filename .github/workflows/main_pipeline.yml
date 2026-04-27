@@ -19,7 +19,7 @@ jobs:
       SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
       SAUCE_BASE_URL: ${{ secrets.SAUCE_BASE_URL }}
       BOOKER_API_URL: ${{ secrets.BOOKER_API_URL }}
-      BOOKER_UI_URL: $ {{ secrets.BOOKER_UI_URL }}
+      BOOKER_BASE_URL: $ {{ secrets.BOOKER_BASE_URL }}
 
     steps:
     - uses: actions/checkout@v4
