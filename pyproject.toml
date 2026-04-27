@@ -12,19 +12,19 @@ dependencies = [
     "pytest-html>=4.1.0",
     "loguru>=0.7.0",             # Expert logging
     "ruff>=0.9.0",               # Fast linting (replacing old ruff)
-    "pre-commit>=4.0.0"          # Keeping your quality gate
+    "pre-commit>=4.0.0",          # Keeping your quality gate
+    "pydantic-settings>=2.2.1"
 ]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
 python_files = "test_*.py"
-# Combined flags from both files:
 addopts = """
     --browser chromium 
-    --base-url https://www.saucedemo.com/
     --html=reports/report.html 
     --self-contained-html
+    -vs
 """
 
 [tool.ruff]

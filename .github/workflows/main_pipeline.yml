@@ -13,11 +13,13 @@ jobs:
     # Note: Opting into Node 24 early to stay ahead of deprecations
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      # Map your secrets here
-      SAUCE_USERNAME: ${{ secrets.USERNAME }}
-      SAUCE_LOCKED_OUT_USERNAME: ${{ secrets.LOCKED_OUT_USERNAME }}
-      SAUCE_PASSWORD: ${{ secrets.PASSWORD }}
-      BASE_URL: ${{ secrets.BASE_URL }}
+      # Mapping secrets here
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_LOCKED_OUT_USERNAME: ${{ secrets.SAUCE_LOCKED_OUT_USERNAME }}
+      SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+      SAUCE_BASE_URL: ${{ secrets.SAUCE_BASE_URL }}
+      BOOKER_API_URL: ${{ secrets.BOOKER_API_URL }}
+      BOOKER_UI_URL: $ {{ secrets.BOOKER_UI_URL }}
 
     steps:
     - uses: actions/checkout@v4
