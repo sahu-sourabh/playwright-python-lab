@@ -15,7 +15,7 @@ class LoginPage:
         self._login_button = page.get_by_role("button", name="Login")
 
     def navigate(self):
-        self.page.goto(url=Config.BASE_URL)
+        self.page.goto(url=Config.SAUCE_BASE_URL)
 
     def submit_login(self, username, password):
         logger.info(f"Attempting login for user: {username}")

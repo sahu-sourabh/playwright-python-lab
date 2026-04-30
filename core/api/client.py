@@ -34,6 +34,17 @@ class AsyncAPIClient:
         else:
             logger.error(f"Response Failed: {response.status_code} | Body: {response.text}")
     
+    async def get_token(self):
+        """Fetch a token from /auth and returns it"""
+        auth_data = {"username": "admin", "password": "password123"}
+        response = await self.post("/auth", data=auth_data)
+        if response.status_code == 200:
+            token = response.json().get("token")
+            logger.info("Token generated successfully")
+            return token
+        else:
+            raise Exception(f"Failed to get token: {response.status_code}")
+
     async def close(self):
         """Close the session"""
         await self.client.aclose()
