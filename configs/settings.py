@@ -3,6 +3,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     # API Target
     booker_api_url: str
+    booker_api_username: str
+    booker_api_password: str
 
     # UI Targets
     booker_base_url: str

@@ -20,6 +20,8 @@ jobs:
       SAUCE_BASE_URL: ${{ secrets.SAUCE_BASE_URL }}
       BOOKER_API_URL: ${{ secrets.BOOKER_API_URL }}
       BOOKER_BASE_URL: $ {{ secrets.BOOKER_BASE_URL }}
+      BOOKER_API_USERNAME: ${{ secrets.BOOKER_API_USERNAME }}
+      BOOKER_API_PASSWORD: ${{ secrets.BOOKER_API_PASSWORD }}
 
     steps:
     - uses: actions/checkout@v4
