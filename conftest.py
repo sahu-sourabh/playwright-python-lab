@@ -9,7 +9,6 @@ def login_page(page):
     lp = LoginPage(page)
     return lp
 
-# Define this at the top-level of conftest.py
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     """
