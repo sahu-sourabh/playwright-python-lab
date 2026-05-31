@@ -1,5 +1,5 @@
-# Playwright Python Lab: Hybrid AI-SDET 🚀
-An R&D Repository for Asynchronous Quality Engineering & Agentic Testing.
+# Playwright Python Hybrid Framework 🚀
+An R&D Repository for Asynchronous Quality Engineering.
 
 [![Playwright Tests](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/sahu-sourabh/playwright-python-lab/actions/workflows/main_pipeline.yml)
 
